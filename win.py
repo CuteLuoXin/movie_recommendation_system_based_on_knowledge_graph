@@ -24,11 +24,9 @@ def read_data(user_id):
                 second_column_data = data[1]
                 seccon_list.append(second_column_data)
     return seccon_list
-def recommend_movies(user_id,text_widget):
+def recommend_movies(user_id):
     model_path = "model/KGCN.h5"
     model = tf.keras.models.load_model(model_path, custom_objects=custom_objects)
-    message = f"模型加载完成\n"
-    text_widget.insert(tk.END, message)
     predection_list_predection = []
     predection_list_item = []
     item_ids = read_data(user_id)
